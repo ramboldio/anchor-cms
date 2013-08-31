@@ -46,11 +46,12 @@ function page_name() {
  */
 function page_title($default = '') {
 	if($title = Registry::prop('article', 'title')) {
-		return $title;
+		return Markdown::defaultTransform($title);
 	}
 
 	if($title = Registry::prop('page', 'title')) {
-		return $title;
+		return Markdown::defaultTransform($title);
+
 	}
 
 	return $default;
